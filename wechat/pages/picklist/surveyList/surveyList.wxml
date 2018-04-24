@@ -1,0 +1,15 @@
+<!--pages/picklist/surveyList/surveyList.wxml-->
+<view >
+    <view class="top-wrap">
+          <view class="top-content">
+              <view class="left top-content-left">
+                 <view class="top-content-p1"><text class="top-content-text">5</text>单</view>
+                 <view class="top-content-p1">每日接单</view>
+              </view>
+              <view class="right top-content-right">
+                  <view class="top-content-p1"><text class="top-content-text">150</text>元</view>
+                  <view class="top-content-p1">今日收入</view>
+              </view>
+          </view>
+    </view>
+</view>

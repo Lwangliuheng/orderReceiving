@@ -1,0 +1,42 @@
+/* pages/picklist/surveyList/surveyList.wxss */
+.survey-wrap{
+   background-color:#f0eff5;
+}
+.top-wrap{
+  background:#b6b6b6;
+  background-size:auto auto;
+  height:267rpx;
+}
+.top-content{
+  width:500rpx;
+  margin:0 auto;
+  padding-top:60rpx;
+  overflow:hidden;
+}
+.top-content-left{
+    width:45%;
+    border-right:1rpx solid #ffffff;
+}
+.top-content-right{
+    width:45%;
+    text-align: right;
+}
+.top-content-p1{
+  font-size:30rpx;
+  color:#ffffff;
+  text-align: center;
+}
+/* .top-content-p2{
+  font-size:30rpx;
+  color:#ffffff;
+  text-align: center;
+} */
+.top-content-text{
+   font-size:50rpx;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
