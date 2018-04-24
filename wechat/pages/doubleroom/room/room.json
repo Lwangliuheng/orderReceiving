@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "你我保",
+  "usingComponents": {
+    "cameraview": "/pages/cameraview/cameraview"
+  }
+}
