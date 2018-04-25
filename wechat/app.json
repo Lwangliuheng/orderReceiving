@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/picklist/videoAndPicture/videoAndPicture",
+    "pages/picklist/redPacket/redPacket",
     "pages/picklist/surveyList/surveyList",
     "pages/main/main",
     "pages/push/push",

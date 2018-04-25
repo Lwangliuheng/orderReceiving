@@ -1,0 +1,85 @@
+.video-and-picture {
+  height: 100%;
+  background: #fff;
+}
+.record-video {
+  width: 100%;
+  height: 288rpx;
+  background: #fff;
+  text-align: center;
+}
+.record-video image{
+  width: 80rpx;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+  vertical-align: top;
+}
+.record-video .record-btn {
+  width: 438rpx;
+  height: 68rpx;
+  border-radius: 14rpx;
+  background: #35aa42;
+  font-size: 34rpx;
+  line-height: 68rpx;
+  color: #fff;
+  margin: 0 auto;
+}
+.gap {
+  height: 20rpx;
+  background: #f3f2f7;
+}
+.pics{
+  padding: 24rpx 24rpx 0;
+}
+.pics .title {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  position: relative;
+  text-indent: 20rpx;
+}
+.title::before {
+  content: '';
+  display: block;
+  width: 4rpx;
+  height: 30rpx;
+  background: #35aa42;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.car1-info,
+.car2-info {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  margin: 40rpx 0 23rpx;
+}
+.up-pic-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.up-pic-box image {
+    width: 226rpx;
+  height: 154rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+.up-pic-box image:nth-child(3n){
+  margin-right: 0;
+}
+.up-pic-box .up-pic-btn {
+  width: 226rpx;
+  height: 154rpx;
+  background: #f3f2f7;  
+  text-align: center;
+}
+.up-pic-btn image {
+  width: 38rpx;
+  border-radius: 50%;
+  margin: 45rpx 0 18rpx;
+  vertical-align: top;
+}
+.up-pic-btn view {
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+}

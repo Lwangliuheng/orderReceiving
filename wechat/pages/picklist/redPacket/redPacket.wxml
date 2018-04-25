@@ -1,0 +1,10 @@
+<view class='red-packet'>
+    <view class="info">
+        <!-- <image> -->
+        <image class='' src='http://placehold.it/58x58' mode='widthFix'></image>
+        <span>手慢了，订单被别人抢走了~</span>
+    </view>
+    <view class='info-tip'>别灰心，送您一个红包奖励，拆开后继续去抢单吧</view>
+    <image class='redBag' src='http://placehold.it/480x585' mode='widthFix'></image>
+    <view class='btn'>继续抢单（3s）</view>
+</view>
