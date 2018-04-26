@@ -1,0 +1,31 @@
+<view class="video-and-picture">
+    <view class="record-video">
+        <image src="http://placehold.it/80x60" mode="widthFix"></image>
+        <view class="record-btn" bindtap='videoLink'>开始视频连接</view>
+    </view>
+    <view class='gap'></view>
+    <view class='pics'>
+      <view class='title'>拍照取证</view>
+      <view class='car1'>
+        <view class='car1-info'>标的车：京PUG111</view>
+        <view class='up-pic-box'>
+          <view class='up-pic-btn' bindtap='uploadImage'>
+            <image src='http://placehold.it/38x38' mode='widthFix'></image>
+            <view>上传图片</view>
+          </view>        
+        </view>
+      </view>
+      <view class='car2'>
+        <view class='car2-info'>三者车：京SSF123</view>
+        <view class='up-pic-box'>
+          <image src='http://placehold.it/226x154' mode='widthFix' bindtap='prewImage'></image>
+          <image src='http://placehold.it/226x154' mode='widthFix'></image>
+          <image src='http://placehold.it/226x154' mode='widthFix'></image>
+          <view class='up-pic-btn' bindtap='uploadImage'>
+            <image src='http://placehold.it/38x38' mode='widthFix'></image>
+            <view>上传图片</view>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
