@@ -136,6 +136,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
+
+
     var pages = getCurrentPages();
     console.log(pages[0].options)
     // pages[0].options = { q: "123" }
@@ -154,7 +157,15 @@ Page({
         var accuracy = res.accuracy;
       }
     })
+    /**
+  * 获取路径参数，判断进入的页面。
+  */
+    getApp().pathIntercept(options);
+    console.log(getApp().data.orderUserId, "获取的UserId");
 
+    /**
+  * 获取用户信息。
+  */
     this.setData({
       hiddenLoading: false
     })
@@ -183,6 +194,7 @@ Page({
         });
       }
     });
+   
   },
 
   /**
@@ -203,6 +215,8 @@ Page({
       // 版本正确，允许进入
       this.data.canShow = 1;
     }
+
+    
   },
   compareVersion:function(v1, v2) {
     v1 = v1.split('.')
@@ -286,7 +300,20 @@ Page({
     console.log("onReachBottom");
 
   },
-
+  /**
+   * 获取路径参数，判断进入的页面。
+   */
+  // pathIntercept(options){
+  //   console.log(options.userId,"订单入口userId")
+  //   var userId = "e8a5819e-d74a-11e7-b854-005056c00008"
+  //   if (userId){
+  //     getApp().data.userName = options.userId;
+  //     var url = '../picklist/surveyList/surveyList?userId=' + options.userId
+  //     wx.navigateTo({
+  //       url: url
+  //     });
+  //   }
+  // },
   /**
    * 用户点击右上角分享
    */

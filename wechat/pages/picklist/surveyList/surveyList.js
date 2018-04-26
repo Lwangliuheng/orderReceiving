@@ -1,4 +1,5 @@
 // pages/picklist/surveyList/surveyList.js
+var config = require('../../../config');
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getOrderList();
   },
 
   /**
@@ -35,7 +36,42 @@ Page({
   onHide: function () {
   
   },
-  //抢单
+  //获取订单列表
+  getOrderList(){
+    console.log(999999999999)
+    var data = {
+      userId: getApp().data.orderUserId,
+      lng: 116.4694415328,//getApp().data.longitude,
+      lat: 39.8984379793  //getApp().data.latitude
+    };
+    var requesturl = config.RequestAddressPrefix4 + '/application/json';
+    var that = this;
+    wx.request({
+      url: requesturl,
+      method: "POST",
+      data: data,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data.rescode == 200) {
+          // that.setData({
+          //   isExist: res.data.data.isExist,
+          //   phoneNumber: res.data.data.userMobilePhone,
+          //   insuranceCompany: res.data.data.insuranceCompanyName,
+          //   insuranceCompanys: res.data.data.insuranceCompanys
+          // })
+          // wx.hideLoading()
+        }
+        console.log(res, 6666666666666666666666)
+      },
+      fail: function () {
+
+      }
+    })
+     
+  },
+  //抢单按钮
   lootMenu(event){
       wx.showModal({
       title: '温馨提示',

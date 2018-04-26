@@ -4,7 +4,10 @@ var qcloud = require('./lib/index');
 
 App({
 
-  onLaunch: function () {
+  onShow: function () {
+    // var currentPage = pages[pages.length - 1] //获取当前页面的对象
+    // var url = currentPage.route //当前页面url
+    // var options = currentPage.options
     // 展示本地存储能力
     // qcloud.setLoginUrl(config.url + 'getwxinfo');
     // qcloud.setLoginUrl(config.url + 'login');
@@ -40,6 +43,21 @@ App({
     reporterLicenseNo: "",
     latitude: "",
     longitude:"",
-    insuranceCompanyList:"" 
-  } 
+    insuranceCompanyList:"" ,
+    orderUserId: ""
+  },
+  /**
+   * 获取路径参数，判断进入的页面。
+   */
+  pathIntercept(options) {
+    console.log(options.userId, "订单入口userId")
+    var userId = "e8a5819e-d74a-11e7-b854-005056c00008"
+    if (userId) {
+      this.data.orderUserId = userId;
+      var url = '../picklist/surveyList/surveyList?userId=' + userId
+      wx.navigateTo({
+        url: url
+      });
+    }
+  },
 })
