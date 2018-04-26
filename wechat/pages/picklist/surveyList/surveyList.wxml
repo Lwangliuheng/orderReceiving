@@ -1,6 +1,7 @@
 <!--pages/picklist/surveyList/surveyList.wxml-->
 <view >
     <view class="top-wrap">
+         <image src="../../Resources/background_one.png" class="top-wrap-back"></image>
           <view class="top-content">
               <view class="left top-content-left">
                  <view class="top-content-p1"><text class="top-content-text">5</text>单</view>
@@ -12,4 +13,41 @@
               </view>
           </view>
     </view>
+    <view class="order-list">
+          <view class="order-title">
+              <text class="left order-plate">北京4654654654</text>
+              <text class="right order-company">阳光保险</text>
+          </view>
+          <view class="order-word-wrap">
+            <image class="word-img" src="../../Resources/time_one.png"></image>
+            <text class="order-word">今天5655</text>
+          </view>
+          <view class="order-word-wrap">
+            <image class="word-img" src="../../Resources/circle.png"></image>
+            <text class="order-word">要求12点到达</text>
+          </view>
+          <view class="order-word-wrap order-word-wrap-te">
+            <image class="word-img" src="../../Resources/site.png"></image>
+            <text class="order-word">要求12点到达<text class="yellow-word">17k</text></text>
+          </view>
+          <view class="order-footer">
+              <view class="left order-footer-word yellow-word">
+                 正在等待查勘
+              </view>
+              <view class="right but-wrap" bindtap="lootMenu">
+                 抢单
+              </view>
+              
+          </view>
+         
+    </view>
+
+
+    <!-- 弹出框 -->
+    <!-- <view class="pop-box">
+        
+    </view> -->
+     <view class="warmPrompt">
+             温馨提示：抢单成功后不能手动取消，需联系客服取消订单
+     </view>
 </view>

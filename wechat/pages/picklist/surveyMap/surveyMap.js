@@ -1,11 +1,11 @@
-// pages/picklist/surveyList/surveyList.js
+// pages/picklist/surveyMap/surveyMap.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    layerState:false // 弹层状态 
   },
 
   /**
@@ -19,7 +19,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+   
+
   },
 
   /**
@@ -35,11 +36,11 @@ Page({
   onHide: function () {
   
   },
-  //抢单
-  lootMenu(event){
+  //打开联系客服弹层
+  contactCustomerService(event){
       wx.showModal({
-      title: '温馨提示',
-      content: '抢单成功后不能手动取消，需联系客服取消订单',
+      title: '客服电话',
+      content: '18245512133',
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定')
@@ -49,11 +50,23 @@ Page({
       }
     })
   },
+  //打开工作证弹层
+  openLayer(event){
+    this.setData({
+      layerState: true
+    })
+  },
+  //关闭工作证弹层
+  closeLayer(event){
+    this.setData({
+      layerState:false
+    })
+  },
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    
   },
 
   /**

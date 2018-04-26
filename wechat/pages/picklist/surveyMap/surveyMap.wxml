@@ -1,0 +1,107 @@
+<!--pages/picklist/surveyMap/surveyMap.wxml-->
+<view >
+   <view class="top-wrap">
+       <view class="top-content-wrap">
+            <view class="top-content">
+                 <view class="left">
+                      <view class="left-wrap">
+                          <view class="left top-content-img-wrap"> 
+                              <image class="top-content-img" src="../../Resources/time_two.png"></image>
+                          </view>
+                          <view class="left top-content-one">15:11</view>
+                          <view class="left top-content-two">分</view>
+                      </view>
+                      <view class="top-content-three">前到达</view>
+                 </view>
+                  <view class="right">
+                     <view class="left-wrap">
+                          <view class="left top-content-img-wrap"> 
+                              <image class="top-content-img" src="../../Resources/money.png"></image>
+                          </view>
+                          <view class="left top-content-one">40</view>
+                          <view class="left top-content-two">元</view>
+                      </view>
+                      <view class="top-content-three">完成奖励</view>
+                 </view>
+            </view>
+       </view>
+   </view>
+
+     <view class="order-list">
+          <view class="order-title">
+              <text class="left order-plate">北京4654654654</text>
+              <text class="right order-company">阳光保险</text>
+          </view>
+          <view class="order-word-wrap">
+              <text class="order-word">报案时间：</text>
+              <text class="order-word">今天5655</text>
+          </view>
+          <view class="order-word-wrap">
+              <text class="order-word">报案用户姓名：</text>
+              <text class="order-word">要求12点到达</text>
+          </view>
+          <view class="order-word-wrap">
+              <text class="order-word">报案用户电话：</text>
+              <text class="order-word order-word-te" >要求12点到达<text class="yellow-word">17k</text></text>
+              <image class="word-img" src="../../Resources/phone.png"></image>
+          </view>
+          <view class="order-word-wrap order-word-wrap-te">
+              <text class="order-word">查勘地址：</text>
+              <text class="order-word order-word-te">要求12点到达<text class="yellow-word">17k</text></text>
+              <image class="word-img" src="../../Resources/site.png"></image>
+          </view>
+          <view class="order-footer">
+              <view class="order-footer-word yellow-word">
+                 骑行预计20分钟到达。
+              </view>
+              <!-- <view class="right but-wrap">
+                 抢单
+              </view> -->
+              <view class="map-wrap">
+                 <map id="map" longitude="113.324520" latitude="23.099994" scale="14"  bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 275px;"></map>
+              </view>
+              <view class="kfgz">
+                 <view class="left kfgz-left" bindtap="contactCustomerService">
+                     <image class="word-footer-img" src="../../Resources/service.png"></image>
+                     <text class="kfgz-word">联系客服</text>
+                 </view>
+                 <view class="right kfgz-right" bindtap="openLayer">
+                     <image class="word-footer-img" src="../../Resources/certificate.png"></image>
+                     <text class="kfgz-word">电子工作证</text>
+                 </view>
+              </view>
+              <view class="leave-but">
+                前往查勘地点
+              </view>
+          </view>
+    </view>
+    
+
+
+    
+    <view class="pop-but-wrap" bindtap="closeLayer" wx:if="{{layerState}}">
+        
+    </view>
+    <view class="pop-but" wx:if="{{layerState}}" bindtap="closeLayer">
+            <view class="company-logo">gsm</view>
+            <view class="employees-card">gsm</view>
+            <view class="employees-img">gsm</view>
+            <view class="employees-name">
+               <text>姓名：</text>
+               <text class="underline">22222222</text>
+            </view>
+            <view class="employees-name">
+               <text>姓名：</text>
+               <text class="underline">22222222</text>
+            </view>
+            <view class="employees-name">
+               <text>姓名：</text>
+               <text class="underline">22222222</text>
+            </view>
+            <view class="employees-name">
+               <text>姓名：</text>
+               <text class="underline">22222222</text>
+            </view>
+            <view class="fork-but">X</view>
+    </view>
+</view>

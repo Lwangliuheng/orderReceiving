@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/picklist/surveyList/surveyList",
     "pages/main/main",
     "pages/push/push",
@@ -14,7 +15,8 @@
     "pages/doubleroom/roomname/roomname",
     "pages/doubleroom/fieldViewRecord/fieldViewRecord",
     "pages/doubleroom/photoList/photoList",
-    "pages/doubleroom/creatOrder/creatOrder"
+    "pages/doubleroom/creatOrder/creatOrder",
+    "pages/picklist/surveyMap/surveyMap"
   ],
   "networkTimeout": {
     "request": 60000
