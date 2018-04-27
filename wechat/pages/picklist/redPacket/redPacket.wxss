@@ -28,8 +28,18 @@
 }
 .redBag {
   width: 480rpx;
-    vertical-align: top;  
-  margin-top: 54rpx;
+  vertical-align: top;  
+}
+.money {
+  position: absolute;
+  bottom: 150rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36rpx;
+  color: #fff;
+}
+.money text {
+  font-size: 60rpx;
 }
 .btn {
   width: 638rpx;
