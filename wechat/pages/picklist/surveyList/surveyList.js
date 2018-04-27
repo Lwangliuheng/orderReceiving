@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    orderList:[],
+    todayReceiveOrderCount:"",//今日接单数
+    todayIncome: ""//今日收入
   },
 
   /**
@@ -14,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     this.getOrderList();
+    this.getTopInfo();
   },
 
   /**
@@ -36,15 +39,48 @@ Page({
   onHide: function () {
   
   },
+  //获取头部信息
+  getTopInfo(){
+    wx.showLoading({
+      title: '加载中',
+    });
+    var mobilePhone = "eac8cb6f-e5a6-4e2e-b741-6bc414fb0576";
+    var requesturl = config.RequestAddressPrefix6 + '/rider/v1/me/'+mobilePhone;
+    var that = this;
+    wx.request({
+      url: requesturl,
+      method: "GET",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res, 66666)
+        if (res.data.rescode == 200) {
+          that.setData({
+            todayReceiveOrderCount: res.data.data.todayReceiveOrderCount,
+            todayIncome: res.data.data.todayIncome
+          })
+          console.log(res.data.data, 555555555)
+          wx.hideLoading()
+        }
+
+      },
+      fail: function () {
+
+      }
+    })
+  },
   //获取订单列表
   getOrderList(){
-    console.log(999999999999)
+    wx.showLoading({
+      title: '加载中',
+    });
     var data = {
       userId: getApp().data.orderUserId,
       lng: 116.4694415328,//getApp().data.longitude,
       lat: 39.8984379793  //getApp().data.latitude
     };
-    var requesturl = config.RequestAddressPrefix4 + '/application/json';
+    var requesturl = config.RequestAddressPrefix5 + '/order/v1/unconsumed/list';
     var that = this;
     wx.request({
       url: requesturl,
@@ -55,15 +91,13 @@ Page({
       },
       success: function (res) {
         if (res.data.rescode == 200) {
-          // that.setData({
-          //   isExist: res.data.data.isExist,
-          //   phoneNumber: res.data.data.userMobilePhone,
-          //   insuranceCompany: res.data.data.insuranceCompanyName,
-          //   insuranceCompanys: res.data.data.insuranceCompanys
-          // })
-          // wx.hideLoading()
+          that.setData({
+            orderList: res.data.data
+          })
+          console.log(res.data.data,555555555)
+          wx.hideLoading()
         }
-        console.log(res, 6666666666666666666666)
+       
       },
       fail: function () {
 
@@ -73,17 +107,79 @@ Page({
   },
   //抢单按钮
   lootMenu(event){
-      wx.showModal({
-      title: '温馨提示',
-      content: '抢单成功后不能手动取消，需联系客服取消订单',
+    console.log(11111)
+    console.log(event.currentTarget.dataset.orderno,"订单号")
+    this.getLootDat(event.currentTarget.dataset.orderno);
+    //   wx.showModal({
+    //   title: '温馨提示',
+    //   content: '抢单成功后不能手动取消，需联系客服取消订单',
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+  },
+  getLootDat(id){
+    wx.showLoading({
+      title: '加载中',
+    });
+    var data = {
+      uid: getApp().data.orderUserId,
+      orderNo:id,
+      lng: 116.4694415328,//getApp().data.longitude,
+      lat: 39.8984379793  //getApp().data.latitude
+    };
+    var requesturl = config.RequestAddressPrefix6 + '/order/v1/scramble';
+    var that = this;
+    wx.request({
+      url: requesturl,
+      method: "POST",
+      data: data,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
       success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+        console.log(res, 666)
+        wx.hideLoading();
+        var url = '../surveyMap/surveyMap';
+        wx.navigateTo({
+          url: url
+        });
+        if (res.data.rescode == 200) {
+          //抢单成功
+          if (res.data.data.ok){
+            // var url = '../surveyMap/surveyMap?roomName=' + self.data.roomName + '&userName=' + self.data.userName;
+            var url = '../surveyMap/surveyMap';
+              wx.navigateTo({
+                url: url
+              });
+          };
+          //发放了红包
+          if (res.data.data.grantRedPacket){
+            var url = '../redPacket/redPacket';
+            wx.navigateTo({
+              url: url
+            });
+          }else{
+            //没有红包
+
+          }
+          // that.setData({
+          //   orderList: res.data.data
+          // })
+          console.log(res.data.data, 555555555)
+          
         }
+
+      },
+      fail: function () {
+
       }
     })
+
   },
   /**
    * 生命周期函数--监听页面卸载
