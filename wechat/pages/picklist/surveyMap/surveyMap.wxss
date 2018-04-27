@@ -122,12 +122,13 @@
   height:88rpx;
   background: #2fab3b;
   color:#fff;
+  margin-bottom:40rpx;
   border-radius:10rpx;
 }
 .kfgz{
   height:auto;
   overflow: hidden;
-  margin-bottom:86rpx;
+  margin-bottom:40rpx;
   margin-top:30rpx;
 }
 .kfgz-left{

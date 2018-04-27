@@ -10,7 +10,9 @@ Page({
     employeesInfo:"", ///工作正信息
     basicInfo:"",//订单基本信息
     polyline:"",//划线数组
-    markers:""
+    markers:"",
+    goSurveySiteState: false,    
+    goSurveySiteValue:"前往查勘地点"
   },
 
   /**
@@ -74,19 +76,34 @@ Page({
           }, {
             longitude: 113.324520,
             latitude: 23.21229
+          },{
+              longitude: 113.314520,
+              latitude: 23.11229
+          }, {
+            longitude: 113.304520,
+            latitude: 23.10229
           }];
-          obj.color = "#000000";
-          obj.width = 2;
+          obj.color = "#4ddd26";
+          obj.width = 4;
+          obj.arrowLine = true;
+          obj.borderWidth = 2;
           obj.dottedLine = false;
           polyline.push(obj);
-          var markers = {
-            id:111,
-            latitude: 23.199994,
-            longitude: 113.354520
-          }
+          var markers = [{
+            id: 111,
+            latitude: 23.099994,
+            longitude: 113.3245211
+          }, {
+            id: 112,
+            latitude: 23.10229,
+            longitude: 113.304520
+          }]
+           
+          
           // polyline = res.data.data.routeCoordinatePoints;
           that.setData({
             basicInfo: res.data.data,
+            markers: markers,
             polyline: polyline
           })
           console.log(res.data.data, "1111111")
@@ -180,6 +197,18 @@ Page({
     this.setData({
       layerState:false
     })
+  },
+  //前往查勘地点
+  goSurveySite(e){
+  
+    if (!this.goSurveySiteState){
+      this.setData({
+        goSurveySiteState: true,
+        goSurveySiteValue: "开始查勘"
+      })
+   }
+   
+    
   },
   /**
    * 生命周期函数--监听页面卸载

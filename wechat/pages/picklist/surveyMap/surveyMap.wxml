@@ -18,7 +18,7 @@
                           <view class="left top-content-img-wrap"> 
                               <image class="top-content-img" src="../../Resources/money.png"></image>
                           </view>
-                          <view class="left top-content-one">40</view>
+                          <view class="left top-content-one">{{basicInfo.income}}</view>
                           <view class="left top-content-two">元</view>
                       </view>
                       <view class="top-content-three">完成奖励</view>
@@ -52,13 +52,16 @@
           </view>
           <view class="order-footer">
               <view class="order-footer-word yellow-word">
-                 骑行预计{{basicInfo.estimateArrivalTime}}分钟到达。
+                <text  wx:if="{{goSurveySiteState}}">
+                    骑行预计{{basicInfo.estimateArrivalTime}}分钟到达。
+                </text>
+                 
               </view>
               <!-- <view class="right but-wrap">
                  抢单
               </view> -->
               <view class="map-wrap">
-                 <map id="map" scale="12" longitude="113.354520" latitude="23.199994"  bindmarkertap="markertap" bindregionchange="regionchange" markers="{{markers}}" show-location style="width: 100%; height: 275px;"  polyline="{{polyline}}"></map>
+                 <map id="map" scale="14"  longitude="113.354520" latitude="23.199994"  bindmarkertap="markertap" bindregionchange="regionchange" markers="{{markers}}" show-location style="width: 100%; height: 275px;"  polyline="{{polyline}}"></map>
               </view>
               <view class="kfgz">
                  <view class="left kfgz-left" bindtap="contactCustomerService">
@@ -70,8 +73,8 @@
                      <text class="kfgz-word">电子工作证</text>
                  </view>
               </view>
-              <view class="leave-but">
-                前往查勘地点
+              <view class="leave-but" bindtap="goSurveySite">
+                {{goSurveySiteValue}}
               </view>
           </view>
     </view>

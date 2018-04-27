@@ -42,7 +42,7 @@ Page({
   //获取头部信息
   getTopInfo(){
     wx.showLoading({
-      title: '加载中',
+      title: '加载中...',
     });
     var mobilePhone = "eac8cb6f-e5a6-4e2e-b741-6bc414fb0576";
     var requesturl = config.RequestAddressPrefix6 + '/rider/v1/me/'+mobilePhone;
@@ -73,7 +73,7 @@ Page({
   //获取订单列表
   getOrderList(){
     wx.showLoading({
-      title: '加载中',
+      title: '加载中...',
     });
     var data = {
       userId: getApp().data.orderUserId,
