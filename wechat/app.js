@@ -44,7 +44,8 @@ App({
     latitude: "",
     longitude:"",
     insuranceCompanyList:"" ,
-    orderUserId: ""
+    orderUserId: "",
+    orderno:""
   },
   /**
    * 获取路径参数，判断进入的页面。

@@ -45,6 +45,7 @@ Page({
       title: '加载中...',
     });
     var mobilePhone = "eac8cb6f-e5a6-4e2e-b741-6bc414fb0576";
+    //var mobilePhone = getApp().data.orderUserId;
     var requesturl = config.RequestAddressPrefix6 + '/rider/v1/me/'+mobilePhone;
     var that = this;
     wx.request({
@@ -109,6 +110,7 @@ Page({
   lootMenu(event){
     console.log(11111)
     console.log(event.currentTarget.dataset.orderno,"订单号")
+    getApp().data.orderno = event.currentTarget.dataset.orderno;
     this.getLootDat(event.currentTarget.dataset.orderno);
     //   wx.showModal({
     //   title: '温馨提示',

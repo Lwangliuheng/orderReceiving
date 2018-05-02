@@ -49,7 +49,7 @@ Page({
       title: '加载中',
     });
     var data = {
-      // userId: getApp().data.orderUserId,
+      // uid: getApp().data.orderUserId,
       uid: "eac8cb6f-e5a6-4e2e-b741-6bc414fb0576",
       lng: 116.4694415328,//getApp().data.longitude,
       lat: 39.8984379793  //getApp().data.latitude
@@ -205,6 +205,41 @@ Page({
       this.setData({
         goSurveySiteState: true,
         goSurveySiteValue: "开始查勘"
+      })
+   }
+  //点击开始查勘按钮
+    if (this.goSurveySiteState){
+      wx.showLoading({
+        title: '加载中',
+      });
+      var data = {
+        // uid: getApp().data.orderUserId,
+        uid: "eac8cb6f-e5a6-4e2e-b741-6bc414fb0576",
+        orderNo: getApp().data.orderno
+      };
+      var requesturl = config.RequestAddressPrefix6 + '/survey/v1/arrivals';
+      var that = this;
+      wx.request({
+        url: requesturl,
+        method: "POST",
+        data: data,
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          wx.hideLoading();
+          console.log(res, 33)
+          if (res.data.rescode == 200) {
+            var url = '../videoAndPicture/videoAndPicture';
+            wx.navigateTo({
+              url: url
+            });
+          }
+
+        },
+        fail: function () {
+
+        }
       })
    }
    

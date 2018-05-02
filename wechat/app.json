@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/picklist/videoAndPicture/videoAndPicture",
-    "pages/doubleroom/creatOrder/creatOrder",
+    
     "pages/main/main",
     "pages/push/push",
     "pages/play/play",
     "pages/vodplay/vodplay",
     "pages/rtplay/rtplay",
+    "pages/doubleroom/creatOrder/creatOrder",
     "pages/doubleroom/launchVideo/launchVideo",
     "pages/doubleroom/myCliam/myCliam",
     "pages/doubleroom/severIntroduce/severIntroduce",
@@ -17,6 +17,7 @@
     "pages/doubleroom/photoList/photoList",
     "pages/picklist/surveyMap/surveyMap",
     "pages/picklist/surveyList/surveyList",
+    "pages/picklist/videoAndPicture/videoAndPicture",
     "pages/picklist/redPacket/redPacket"
   ],
   "networkTimeout": {
